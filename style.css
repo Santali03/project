@@ -1,0 +1,261 @@
+
+body {
+    margin: 0 auto;
+}
+
+/* styling home page */
+
+.container-fluid{
+    background-color: #26fc0a;
+    padding-left: 70px;
+    font-size: 23px;
+    font-family: Lucida Bright;
+}
+
+
+.card-img{
+  width: 100%;
+    height: auto;
+  animation: floatimg 4s ease-in-out infinite;
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Add specific styling for smaller screens */
+}
+
+
+@keyframes floatimg {
+  0%{
+      transform: translateX(0);
+  }
+  50%{
+      transform: translateX(-24px);
+  }
+  100%{
+      transform: translateX(0);
+  }
+}
+
+
+.td a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.news1{
+ display:grid; 
+ margin-left: 198px;  
+ grid-template-columns: auto auto auto auto auto auto;
+ grid-gap: 5px;
+
+}
+
+/* styling shop */
+.shop{
+    display:grid; 
+    margin-left: 198px;  
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 5px;
+   
+   }
+
+   .card-title5{
+font-family: 'Times New Roman', Times, serif;
+
+   }
+
+   /* styling quiz */
+   .quiz{
+
+    display:grid; 
+    margin-left: 198px;  
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 5px;
+}
+
+
+.quiz-title{
+    margin-top: 30px;
+    margin-bottom: 25px;
+    
+    background-color: #26fc0a;
+    width: 60rem;
+    margin-left: 198px;
+}
+
+/* styling news */
+
+
+.cardnews:hover{
+  transform: scale(1.1,1.1);
+    transition-duration: 0.6s;
+}
+
+
+.card-quiz:hover{
+  transform: scale(1.1,1.1);
+    transition-duration: 0.6s;
+}
+
+
+.news-title{
+
+    margin-top: 30px;
+    margin-bottom: 25px;
+    
+    background-color: #26fc0a;
+   
+    
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.players{
+    margin-top: 30px;
+    width: 900px;
+}
+
+.card-text1{
+    text-align: justify;
+    line-height: 2.4;
+}
+
+.news-heading{
+    text-decoration-line:underline ;
+    text-decoration-color:#26fc0a ;
+    text-align: center;
+}
+
+
+/* styling ticket */
+.ticket-info{
+  text-align: justify;
+  line-height: 1.5;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  margin-left: 270px;
+}
+
+
+/* styling footer */
+
+footer {
+    background-color: #121315;
+    color: #ffffff;
+    font-size: 16px;
+    height: 400px;
+  }
+  footer * {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+  }
+  .row {
+    padding: 2em 1em;
+  }
+  .row.primary {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: stretch;
+    height: 230px;
+  }
+
+  .column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+    min-height: 15em;
+  }
+  h3 {
+    width: 100%;
+    text-align: left;
+    color: #2a8ded;
+    font-size: 1.6em;
+    white-space: nowrap;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  li:not(:first-child) {
+    margin-top: 0.8em;
+  }
+  ul li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  ul li a:hover {
+    color: #2a8ded;
+  }
+
+  .about p {
+    text-align: justify;
+    line-height: 2;
+    margin: 0;
+  }
+  input,
+  button {
+    font-size: 1em;
+    padding: 1em;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  button {
+    background-color: #2a8ded;
+    color: #ffffff;
+  }
+  div.social {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.4em;
+    flex-direction: row;
+    margin-top: 0.5em;
+  }
+  .social i:hover {
+    color: #2a8ded;
+  }
+  .row.secondary {
+    display: grid;
+   grid-template-columns: auto auto auto;
+    grid-gap: 1px;
+    justify-content: space-around;
+    text-align: center;
+    height: 105px;
+  }
+  .row.secondary i {
+    font-size: 1.8em;
+    color: #2a8ded;
+  }
+  .row.secondary div {
+    width: 100%;
+  }
+
+  .copyright {
+    display: grid;
+    width: 101%;
+    height: 5px;
+    float: left;
+    background-color: #25262e;
+  }
+  .copyright p {
+    font-size: 0.8em;
+    text-align: center;
+  }
+  @media screen and (max-width: 850px) {
+    .row.primary {
+      grid-template-columns: 1fr;
+    }
+    .row.secondary {
+      flex-direction: column;
+    }
+  }
+
+/* styling footer ends */
+

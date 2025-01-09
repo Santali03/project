@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="style.css"/>
+    <meta charset="utf-8" />
+<!-- Font Awesome CDN -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+rel="stylesheet"
+    <meta name="description" content="Nasarawa United Football Club Official Website: get the latest news, highlights, fixtures and results." />
+<link rel="canonical" href="https://www.nufc.com/" />
+<link rel="shortlink" href="https://www.nufc.com/" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nasarawa United FC Official Website | Quiz-3 | NUFC.com</title>
+
+
+
+    <style>
+
+      .start-screen,
+      .score-container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      #start-button,
+      #restart {
+        font-size: 1.3em;
+        padding: 0.5em 1.8em;
+        border-radius: 0.2em;
+        width: 20%;
+        background-color: #30ed0a;
+      }
+      #restart {
+        margin-top: 0.9em;
+      }
+      #display-container {
+        background-color: #ffffff;
+        padding: 3.1em 1.8em;
+        width: 80%;
+        max-width: 37.5em;
+        margin: 0 auto;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 59%;
+        left: 50%;
+        border-radius: 0.6em;
+      }
+      
+      
+      .header {
+        margin-bottom: 1.8em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0.6em;
+        border-bottom: 0.1em solid #c0bfd2;
+      }
+      .timer-div {
+        background-color: #e1f5fe;
+        width: 7.5em;
+        border-radius: 1.8em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.7em 1.8em;
+      }
+      .question {
+        margin-bottom: 1.25em;
+        font-weight: 600;
+      }
+      .option-div {
+        font-size: 0.9em;
+        width: 100%;
+        padding: 1em;
+        margin: 0.3em 0;
+        text-align: left;
+        outline: none;
+        background: transparent;
+        -webkit-text-fill-color: #000000;
+        border: 1px solid #c0bfd2;
+        border-radius: 0.3em;
+      }
+      .option-div:disabled {
+        color: #000000;
+        cursor: not-allowed;
+      }
+      #next-button {
+        font-size: 1em;
+        margin-top: 1.5em;
+        background-color: #30ed0a;
+        color: #ffffff;
+        padding: 0.7em 1.8em;
+        border-radius: 0.3em;
+        float: right;
+      }
+      
+      .hide {
+        display: none;
+      }
+      .incorrect {
+        background-color: #ffdde0;
+        color: #d32f2f;
+        border-color: #d32f2f;
+      }
+      .correct {
+        background-color: #e7f6d5;
+        color: #689f38;
+        border-color: #689f38;
+      }
+      #user-score {
+        font-size: 1.5em;
+        color: #ff0101;
+      }
+      
+      h1{
+          font-size: 40px;
+          color: #ffffff;
+          padding: 30px 25px;
+          border-radius: 8px;
+          box-shadow: 0 15px 20px rgba(0,0,0,0.3);
+          margin-bottom: 50px;
+      
+      }
+      </style>
+
+
+
+    </head>
+    
+    <body>
+
+      <!-- Navbar start here  -->
+      <center>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid"  style="width: 5000px;">
+  
+              <img src="image/Logo.JPG" class="card-img-top" alt="..." style="width:70px;height:70px;">
+  
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html"></a>
+                </li>
+  
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+  
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="news.html">News</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Players
+                  </a>
+                  <ul class="dropdown-menu">
+  
+                    <table class="players">
+                      <tr> 
+                        <th>GOAL KEEPERS </th>
+                        <th>DEFENDERS</th>
+                        <th>MIDFIELDERS</th>
+                        <th>FORWARDS</th>
+                        </tr>
+                    
+                        <tr> 
+                          <td class="td"> <a href="news.html">Ameh Godwin </a></td>
+                          <td>Aminu Abubakar </td>
+                          <td>Emeka Onyema</td>
+                          <td>Nonso Charles</td>
+                        </tr>
+                    
+                        <tr> 
+                          <td>M. Galadima</td>
+                          <td>Hussaini Mubarak </td>
+                          <td>Musa Musa</td>
+                          <td>Sabo Gambo</td>
+                        </tr>
+                    
+                        <tr> 
+                          <td></td>
+                          <td>Kabiru Balogun </td>
+                          <td>Anas Yusuf</td>
+                          <td>Adamu Hassan</td>
+                        </tr>
+                    
+                        <tr> 
+                          <td></td>
+                          <td>Saviour Chukwu </td>
+                          <td>Moyi Hassan</td>
+                          <td>Chinedu Ohanachum</td>
+                        </tr>
+                    
+                        <tr> 
+                          <td></td>
+                          <td>Uchenna Odeh </td>
+                          <td>Ebuka Ekesi</td>
+                          <td>Habibu Alakija</td>
+                        </tr>
+                    
+                        <tr> 
+                          <td></td>
+                          <td>Joel Okoro </td>
+                          <td>King Osanga</td>
+                          <td></td>
+                        </tr>
+                    
+                        <tr> 
+                          <td></td>
+                          <td>Aminu Abubakar </td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                    
+                        </table> 
+  
+  
+                    <li><hr class="dropdown-divider" ></li>
+                    <li><a class="dropdown-item" href="#">Coach: Kabiru S. Dogo</a></li>
+                  </ul>
+  
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Fixtures
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="fixtures.html">Upcoming Matches</a></li>
+                    <li><a class="dropdown-item" href="fixtures.html">Results</a></li>
+                    <li><a class="dropdown-item" href="fixtures.html">Table</a></li>
+                    
+                    
+                  </ul>
+  
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tickets
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="ticket.html">Ticket Information</a></li>
+                        <li><a class="dropdown-item" href="ticket.html">How to buy ticket</a></li>
+                        <li><a class="dropdown-item" href="ticket.html">Membership Information </a></li>
+                        <li><a class="dropdown-item" href="ticket.html">Membership Reward</a></li>
+                      </ul>
+  
+                      <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="shop.html">Shop</a>
+                        </li>
+  
+                </li>
+              </ul>
+              <a href="login.html">
+                <button class="btn btn-outline-success" type="login"  >Login</button>
+              </a>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </center>
+   <!-- Navbar ends here  -->
+  
+  
+   <br>
+   <h2>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; QUIZ </h2> 
+  <br>
+  
+   <div class="card" style="width: 20rem;">
+    <img src="image/train.JPG" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">CLUB PLAYERS</h5>
+      <p class="card-text">Just some random quiz about the club. <br> About the players and coaches</p>
+      
+    </div>
+  </div>
+   
+  
+   <center>
+    <h1> Quiz App</h1>
+  </center>
+      <div class="start-screen">
+        <button id="start-button">Start</button>
+      </div>
+      <div id="display-container">
+        <div class="header">
+          <div class="number-of-count">
+            <span class="number-of-question">1 of 3 questions</span>
+          </div>
+          <div class="timer-div">
+            <img src="timer-icon.svg" />
+            <span class="time-left">10s</span>
+          </div>
+        </div>
+        <div id="container">
+          <!-- questions and options will be displayed here -->
+        </div>
+        <button id="next-button">Next</button>
+      </div>
+      <div class="score-container hide">
+        <div id="user-score">Demo Score</div>
+        <button id="restart">Restart</button>
+      </div>
+  
+  
+      
+  
+  <div class="quiz">
+    <div class="card" style="width: 18rem;">
+      <img src="image/stadium.JPG" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">QUIZ</h5>
+        <p class="card-text">Club History <br> Some quick quiz about the club history and trophies won</p>
+        <a href="quiz1.html" class="btn btn-primary">Start Quiz</a>
+      </div>
+    </div>
+    
+    <br>
+    <div class="card" style="width: 18rem;">
+      <img src="image/player.JPG" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">QUIZ</h5>
+        <p class="card-text">Club Players <br> Some quick quiz about the club players and coaches</p>
+        <a href="quiz2.html" class="btn btn-primary">Start Quiz </a>
+      </div>
+    </div>
+    
+    </div>
+    
+  
+  
+  
+  
+  <br>
+    
+  
+   
+  
+  <!-- footer start here  -->
+  <div class="whole-footer">
+    <footer >
+            
+      <div class="row primary">
+        <div class="column about">
+          <h3>Sponsors</h3>
+          <img src="image/nasarawaGovt.JPG" width="150px" height="150px">
+          <p>
+            NASARAWA STATE GOVERNMENT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          </p>
+        </div>
+        
+        <div class="column links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="news.html">News</a>
+            </li>
+            <li>
+              <a href="fixtures.html">Fixtures</a>
+            </li>
+            <li>
+              <a href="shop.html">Shop</a>
+            </li>
+            <li>
+              <a href="ticket.html">Tickets</a>
+            </li>
+          </ul>
+        </div>
+    
+        <div class="column subscribe">
+          <h3>Subscribe</h3>
+          <div>
+            <input type="email" placeholder="Your email here" />
+            <button>Subscribe</button>
+          </div>
+          <div class="social">
+            <a href="https://www.facebook.com/nufclafia">
+            <i class="fa-brands fa-facebook-square" ></i>
+          </a>
+    
+          <a href="https://www.instagram.com/nasarawaunited?igsh=MXN5dxh1NXN0aGJ0dg==">
+            <i class="fa-brands fa-instagram-square"></i>
+          </a>
+    
+          <a href="https://www.x.com/NasarawaUnited?t=LYwDEFYJToD7VVJysZ56uA&s=09">
+            <i class="fa-brands fa-twitter-square"></i>
+          </a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row secondary">
+        <div>
+          <p>
+            <i class="fas fa-phone-alt"></i>
+          </p>
+          <p>+2349061315523</p>
+        </div>
+        <div>
+          <p><i class="fas fa-envelope"></i></p>
+          <p>nufc@gmail.com</p>
+        </div>
+        <div>
+          <p><i class="fas fa-map-marker-alt"></i></p>
+          <p>Bukan Sidi, Lafia Nasarawa State</p>
+        </div>
+      </div>
+      <div class="row copyright">
+        <p>Copyright &copy; 2024 | All Rights Reserved</p>
+      </div>
+    </footer>
+    </div>
+    
+    
+    <!-- footer end here  -->
+  
+
+
+<!-- Script -->
+
+<script> 
+        
+        
+  //References
+let timeLeft = document.querySelector(".time-left");
+let quizContainer = document.getElementById("container");
+let nextBtn = document.getElementById("next-button");
+let countOfQuestion = document.querySelector(".number-of-question");
+let displayContainer = document.getElementById("display-container");
+let scoreContainer = document.querySelector(".score-container");
+let restart = document.getElementById("restart");
+let userScore = document.getElementById("user-score");
+let startScreen = document.querySelector(".start-screen");
+let startButton = document.getElementById("start-button");
+let questionCount;
+let scoreCount = 0;
+let count = 11;
+let countdown;
+
+//Questions and Options array
+
+const quizArray = [
+  {
+    id: "0",
+    question: "What's the club nickname?",
+    options: ["The Solid Miners", "A.A Sule Boys", "The Red Devils", "Amazons"],
+    correct: "The Solid Miners",
+  },
+  {
+    id: "1",
+    question: "Who is the club sponsor?",
+    options: ["The State Government", "MTN", "SportyBet", "Air Peace"],
+    correct: "The State Government",
+  },
+  {
+    id: "2",
+    question: "Who is the current team captain?",
+    options: ["Dauda Maigishiri", "Anas Yusuf", "King Osanga", "Emeka Onyema"],
+    correct: "King Osanga",
+  },
+];
+
+
+//Restart Quiz
+restart.addEventListener("click", () => {
+initial();
+displayContainer.classList.remove("hide");
+scoreContainer.classList.add("hide");
+});
+
+//Next Button
+nextBtn.addEventListener(
+"click",
+(displayNext = () => {
+//increment questionCount
+questionCount += 1;
+//if last question
+if (questionCount == quizArray.length) {
+//hide question container and display score
+displayContainer.classList.add("hide");
+scoreContainer.classList.remove("hide");
+//user score
+userScore.innerHTML =
+  "Your score is " + scoreCount + " out of " + questionCount;
+} else {
+//display questionCount
+countOfQuestion.innerHTML =
+  questionCount + 1 + " of " + quizArray.length + " Question";
+//display quiz
+quizDisplay(questionCount);
+count = 11;
+clearInterval(countdown);
+timerDisplay();
+}
+})
+);
+
+//Timer
+const timerDisplay = () => {
+countdown = setInterval(() => {
+count--;
+timeLeft.innerHTML = `${count}s`;
+if (count == 0) {
+clearInterval(countdown);
+displayNext();
+}
+}, 1000);
+};
+
+//Display quiz
+const quizDisplay = (questionCount) => {
+let quizCards = document.querySelectorAll(".container-mid");
+//Hide other cards
+quizCards.forEach((card) => {
+card.classList.add("hide");
+});
+//display current question card
+quizCards[questionCount].classList.remove("hide");
+};
+
+//Quiz Creation
+function quizCreator() {
+//randomly sort questions
+quizArray.sort(() => Math.random() - 0.5);
+//generate quiz
+for (let i of quizArray) {
+//randomly sort options
+i.options.sort(() => Math.random() - 0.5);
+//quiz card creation
+let div = document.createElement("div");
+div.classList.add("container-mid", "hide");
+//question number
+countOfQuestion.innerHTML = 1 + " of " + quizArray.length + " Question";
+//question
+let question_DIV = document.createElement("p");
+question_DIV.classList.add("question");
+question_DIV.innerHTML = i.question;
+div.appendChild(question_DIV);
+//options
+div.innerHTML += `
+<button class="option-div" onclick="checker(this)">${i.options[0]}</button>
+<button class="option-div" onclick="checker(this)">${i.options[1]}</button>
+<button class="option-div" onclick="checker(this)">${i.options[2]}</button>
+ <button class="option-div" onclick="checker(this)">${i.options[3]}</button>
+`;
+quizContainer.appendChild(div);
+}
+}
+
+//Checker Function to check if option is correct or not
+function checker(userOption) {
+let userSolution = userOption.innerText;
+let question =
+document.getElementsByClassName("container-mid")[questionCount];
+let options = question.querySelectorAll(".option-div");
+
+//if user clicked answer == correct option stored in object
+if (userSolution === quizArray[questionCount].correct) {
+userOption.classList.add("correct");
+scoreCount++;
+} else {
+userOption.classList.add("incorrect");
+//For marking the correct option
+options.forEach((element) => {
+if (element.innerText == quizArray[questionCount].correct) {
+  element.classList.add("correct");
+}
+});
+}
+
+//clear interval(stop timer)
+clearInterval(countdown);
+//disable all options
+options.forEach((element) => {
+element.disabled = true;
+});
+}
+
+//initial setup
+function initial() {
+quizContainer.innerHTML = "";
+questionCount = 0;
+scoreCount = 0;
+count = 11;
+clearInterval(countdown);
+timerDisplay();
+quizCreator();
+quizDisplay(questionCount);
+}
+
+//when user click on start button
+startButton.addEventListener("click", () => {
+startScreen.classList.add("hide");
+displayContainer.classList.remove("hide");
+initial();
+});
+
+//hide quiz and display start screen
+window.onload = () => {
+startScreen.classList.remove("hide");
+displayContainer.classList.add("hide");
+};
+  </script>
+
+
+
+      </body>
+      </html>
